@@ -13,6 +13,8 @@
 		907909692846CA9B00C94546 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 907909672846CA9B00C94546 /* Main.storyboard */; };
 		9079096B2846CAA200C94546 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9079096A2846CAA200C94546 /* Assets.xcassets */; };
 		9079096E2846CAA200C94546 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9079096C2846CAA200C94546 /* LaunchScreen.storyboard */; };
+		907909762846DF1600C94546 /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907909752846DF1600C94546 /* Business.swift */; };
+		907909782846E17A00C94546 /* BusinessTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907909772846E17A00C94546 /* BusinessTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		9079096A2846CAA200C94546 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9079096D2846CAA200C94546 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9079096F2846CAA200C94546 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		907909752846DF1600C94546 /* Business.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
+		907909772846E17A00C94546 /* BusinessTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 				907909632846CA9B00C94546 /* SceneDelegate.swift */,
 				907909652846CA9B00C94546 /* ViewController.swift */,
 				907909672846CA9B00C94546 /* Main.storyboard */,
+				907909752846DF1600C94546 /* Business.swift */,
+				907909772846E17A00C94546 /* BusinessTableViewCell.swift */,
 				9079096A2846CAA200C94546 /* Assets.xcassets */,
 				9079096C2846CAA200C94546 /* LaunchScreen.storyboard */,
 				9079096F2846CAA200C94546 /* Info.plist */,
@@ -138,7 +144,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				907909782846E17A00C94546 /* BusinessTableViewCell.swift in Sources */,
 				907909662846CA9B00C94546 /* ViewController.swift in Sources */,
+				907909762846DF1600C94546 /* Business.swift in Sources */,
 				907909622846CA9B00C94546 /* AppDelegate.swift in Sources */,
 				907909642846CA9B00C94546 /* SceneDelegate.swift in Sources */,
 			);
