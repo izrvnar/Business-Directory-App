@@ -33,6 +33,10 @@ class DetailViewController: UIViewController, MKMapViewDelegate {
             
             // printing long/latitude
             print("\(business.longitude) \(business.latitude)")
+            //checking for correct car 
+            for car in business.vehicles {
+                print(car.make)
+            }
             
             
             
