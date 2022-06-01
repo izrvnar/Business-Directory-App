@@ -18,6 +18,7 @@ class ViewController: UIViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! BusinessTableViewCell
         cell.companyNameLabel.text = business.businessName
         cell.salesManagerLabel.text = business.salesManager
+        cell.carsForSaleLabel.text = "\(business.vehicles.count) cars for sale"
         
         
         return cell

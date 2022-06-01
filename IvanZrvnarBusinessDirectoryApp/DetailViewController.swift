@@ -6,11 +6,15 @@
 //
 
 import UIKit
+import MapKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, MKMapViewDelegate {
     
     //MARK: - Properties
     var business: Business?
+    @IBOutlet var mapView: MKMapView!
+    
+    
     
     
     //MARK: - Outlets
@@ -26,10 +30,33 @@ class DetailViewController: UIViewController {
             companyNameLabel.text = business.businessName
             salesManagerLabel.text = business.salesManager
             phoneNumberLabel.text = business.phoneNumber
+            
+            // printing long/latitude
+            print("\(business.longitude) \(business.latitude)")
+            
+            
+            
+            let buisnessLocation = CLLocation(latitude: business.latitude, longitude: business.longitude)
+            let regionRadius : CLLocationDistance = 1_000
+            
+            let region = MKCoordinateRegion(center: buisnessLocation.coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
+            
+            mapView.setRegion(region, animated: true)
+            let mapAnnotationView = CustomPin(coordinate: (CLLocationCoordinate2D(latitude: business.latitude, longitude: business.longitude)))
+            mapView.addAnnotation(mapAnnotationView)
+            
+
         }
+        
+        mapView.delegate = self
+     
+        
 
         // Do any additional setup after loading the view.
     }
+    //MARK: - Methods
+    
+    
     
 
     /*
@@ -43,3 +70,5 @@ class DetailViewController: UIViewController {
     */
 
 }
+
+

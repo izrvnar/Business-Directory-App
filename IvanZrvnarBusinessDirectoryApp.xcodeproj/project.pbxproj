@@ -16,6 +16,8 @@
 		907909762846DF1600C94546 /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907909752846DF1600C94546 /* Business.swift */; };
 		907909782846E17A00C94546 /* BusinessTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907909772846E17A00C94546 /* BusinessTableViewCell.swift */; };
 		9079097A2846F9E900C94546 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907909792846F9E900C94546 /* DetailViewController.swift */; };
+		9079097C2847EFF700C94546 /* CustomPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9079097B2847EFF700C94546 /* CustomPin.swift */; };
+		9079097E2847F1D900C94546 /* Vehicles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9079097D2847F1D900C94546 /* Vehicles.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		907909752846DF1600C94546 /* Business.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
 		907909772846E17A00C94546 /* BusinessTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessTableViewCell.swift; sourceTree = "<group>"; };
 		907909792846F9E900C94546 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		9079097B2847EFF700C94546 /* CustomPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPin.swift; sourceTree = "<group>"; };
+		9079097D2847F1D900C94546 /* Vehicles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicles.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,8 +70,10 @@
 				907909632846CA9B00C94546 /* SceneDelegate.swift */,
 				907909652846CA9B00C94546 /* ViewController.swift */,
 				907909792846F9E900C94546 /* DetailViewController.swift */,
+				9079097B2847EFF700C94546 /* CustomPin.swift */,
 				907909672846CA9B00C94546 /* Main.storyboard */,
 				907909752846DF1600C94546 /* Business.swift */,
+				9079097D2847F1D900C94546 /* Vehicles.swift */,
 				907909772846E17A00C94546 /* BusinessTableViewCell.swift */,
 				9079096A2846CAA200C94546 /* Assets.xcassets */,
 				9079096C2846CAA200C94546 /* LaunchScreen.storyboard */,
@@ -148,8 +154,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				907909782846E17A00C94546 /* BusinessTableViewCell.swift in Sources */,
+				9079097C2847EFF700C94546 /* CustomPin.swift in Sources */,
 				907909662846CA9B00C94546 /* ViewController.swift in Sources */,
 				907909762846DF1600C94546 /* Business.swift in Sources */,
+				9079097E2847F1D900C94546 /* Vehicles.swift in Sources */,
 				9079097A2846F9E900C94546 /* DetailViewController.swift in Sources */,
 				907909622846CA9B00C94546 /* AppDelegate.swift in Sources */,
 				907909642846CA9B00C94546 /* SceneDelegate.swift in Sources */,

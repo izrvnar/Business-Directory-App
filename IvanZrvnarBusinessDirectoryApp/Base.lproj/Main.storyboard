@@ -179,6 +179,12 @@
                                         <buttonConfiguration key="configuration" style="plain" title="Save To Contacts"/>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="0vv-5K-U07" secondAttribute="trailing" constant="36.5" id="E7A-WS-7x6"/>
+                                    <constraint firstItem="0vv-5K-U07" firstAttribute="top" secondItem="txh-G1-kOY" secondAttribute="bottom" constant="34" id="RHE-xM-R6P"/>
+                                    <constraint firstItem="9V6-y5-Dhz" firstAttribute="top" secondItem="0vv-5K-U07" secondAttribute="bottom" constant="34" id="hK5-vK-OUh"/>
+                                    <constraint firstItem="0vv-5K-U07" firstAttribute="leading" secondItem="25C-mf-o3t" secondAttribute="leading" constant="36.5" id="u8w-et-PWq"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gUh-Wa-I7H"/>
@@ -193,6 +199,7 @@
                     <navigationItem key="navigationItem" id="B1O-Eo-HZh"/>
                     <connections>
                         <outlet property="companyNameLabel" destination="txh-G1-kOY" id="oLy-Vi-hp7"/>
+                        <outlet property="mapView" destination="0vv-5K-U07" id="w8J-2k-IxR"/>
                         <outlet property="phoneNumberLabel" destination="A94-o2-YOI" id="KW5-kH-PCH"/>
                         <outlet property="salesManagerLabel" destination="bXo-dN-qRl" id="W6K-9l-jvE"/>
                     </connections>
