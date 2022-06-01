@@ -44,7 +44,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HiX-86-HIT">
-                                                    <rect key="frame" x="10" y="0.0" width="394" height="97"/>
+                                                    <rect key="frame" x="10" y="0.0" width="394" height="300"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="companyNameLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="an7-4X-jGz">
                                                             <rect key="frame" x="74.5" y="5" width="245" height="30"/>
@@ -72,6 +72,7 @@
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.45180135970000002" green="0.99325114489999999" blue="0.99998944999999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="height" constant="300" id="fLc-9i-3hs"/>
                                                         <constraint firstItem="an7-4X-jGz" firstAttribute="top" secondItem="HiX-86-HIT" secondAttribute="top" constant="5" id="iZB-Vf-elC"/>
                                                         <constraint firstItem="an7-4X-jGz" firstAttribute="centerX" secondItem="HiX-86-HIT" secondAttribute="centerX" id="xbn-4b-AEi"/>
                                                     </constraints>
@@ -80,7 +81,6 @@
                                             <constraints>
                                                 <constraint firstItem="HiX-86-HIT" firstAttribute="top" secondItem="pdF-Vk-EF0" secondAttribute="top" id="Jhn-bz-jqI"/>
                                                 <constraint firstItem="HiX-86-HIT" firstAttribute="leading" secondItem="pdF-Vk-EF0" secondAttribute="leading" constant="10" id="MSz-lf-rSt"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="HiX-86-HIT" secondAttribute="bottom" constant="50" id="XHB-Lc-MbP"/>
                                                 <constraint firstAttribute="trailing" secondItem="HiX-86-HIT" secondAttribute="trailing" constant="10" id="mHN-8L-Qwy"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -112,10 +112,10 @@
             </objects>
             <point key="canvasLocation" x="1634.7826086956522" y="-356.25"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="2we-sH-lNt">
             <objects>
-                <viewController id="9We-QM-y5F" sceneMemberID="viewController">
+                <viewController id="9We-QM-y5F" customClass="DetailViewController" customModule="IvanZrvnarBusinessDirectoryApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cqZ-Im-ozl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -184,6 +184,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="B1O-Eo-HZh"/>
+                    <connections>
+                        <outlet property="companyNameLabel" destination="txh-G1-kOY" id="oLy-Vi-hp7"/>
+                        <outlet property="phoneNumberLabel" destination="A94-o2-YOI" id="KW5-kH-PCH"/>
+                        <outlet property="salesManagerLabel" destination="bXo-dN-qRl" id="W6K-9l-jvE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XX7-rA-yYq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

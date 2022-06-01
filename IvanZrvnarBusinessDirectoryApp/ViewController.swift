@@ -31,7 +31,7 @@ class ViewController: UIViewController {
     }
     
    
-    
+    //MARK: - View did load
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -42,7 +42,7 @@ class ViewController: UIViewController {
         fetchBusiness()
     }
     
-        //MARK: Fetch Businesses
+        //MARK:  - Fetch Businesses
     func fetchBusiness(){
         let urlString = "https://dtakaki.scweb.ca/MADTutorial/test1Download.json"
         guard let url = URL(string: urlString) else {return}
@@ -76,7 +76,23 @@ class ViewController: UIViewController {
         
         dataTask.resume()
         }
+    
+    //MARK: - Prepare for segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let selectedIndex = tableView.indexPathForSelectedRow else {return}
+        
+        let destinationVC = segue.destination as! DetailViewController
+        
+        let businessToPass = tableDataSource.itemIdentifier(for: selectedIndex)
+        destinationVC.business = businessToPass
+        
+        
+        
+
     }
+    
+    
+    }//: view controller
 
 
 
