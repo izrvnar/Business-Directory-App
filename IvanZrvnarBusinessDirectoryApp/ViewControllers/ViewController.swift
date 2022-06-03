@@ -37,13 +37,10 @@ class ViewController: UIViewController {
     //MARK: - View did load
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchBusiness()
         // Do any additional setup after loading the view.
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        fetchBusiness()
-    }
     
         //MARK:  - Fetch Businesses
     func fetchBusiness(){

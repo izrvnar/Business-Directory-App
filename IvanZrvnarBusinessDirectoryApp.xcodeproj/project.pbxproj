@@ -22,6 +22,7 @@
 		907909822848195000C94546 /* ContactDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907909812848195000C94546 /* ContactDetailViewController.swift */; };
 		9079098D28492E5500C94546 /* BusinessCD.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9079098B28492E5500C94546 /* BusinessCD.xcdatamodeld */; };
 		9079098F2849316300C94546 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9079098E2849316300C94546 /* CoreDataStack.swift */; };
+		90790991284A71B700C94546 /* SavedConfirmation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90790990284A71B700C94546 /* SavedConfirmation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		907909812848195000C94546 /* ContactDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailViewController.swift; sourceTree = "<group>"; };
 		9079098C28492E5500C94546 /* BusinessCD.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BusinessCD.xcdatamodel; sourceTree = "<group>"; };
 		9079098E2849316300C94546 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		90790990284A71B700C94546 /* SavedConfirmation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedConfirmation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 				907909812848195000C94546 /* ContactDetailViewController.swift */,
 				907909792846F9E900C94546 /* DetailViewController.swift */,
 				9079097F284818B600C94546 /* ContactViewController.swift */,
+				90790990284A71B700C94546 /* SavedConfirmation.swift */,
 				907909652846CA9B00C94546 /* ViewController.swift */,
 			);
 			path = ViewControllers;
@@ -215,6 +218,7 @@
 				907909822848195000C94546 /* ContactDetailViewController.swift in Sources */,
 				9079097A2846F9E900C94546 /* DetailViewController.swift in Sources */,
 				9079098D28492E5500C94546 /* BusinessCD.xcdatamodeld in Sources */,
+				90790991284A71B700C94546 /* SavedConfirmation.swift in Sources */,
 				907909622846CA9B00C94546 /* AppDelegate.swift in Sources */,
 				907909642846CA9B00C94546 /* SceneDelegate.swift in Sources */,
 			);

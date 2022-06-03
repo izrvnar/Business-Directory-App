@@ -24,6 +24,20 @@ class DetailViewController: UIViewController, MKMapViewDelegate {
         
         // print test
         print(savedBusiness)
+        
+        let savedConfirmation = SavedConfirmation()
+        savedConfirmation.frame = view.bounds
+        savedConfirmation.isOpaque = false
+        
+        view.addSubview(savedConfirmation)
+        view.isUserInteractionEnabled = false
+        savedConfirmation.showDialog()
+        
+        let delay = 1.5
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: {
+            self.navigationController?.popViewController(animated: true)
+        })
     }
     
     

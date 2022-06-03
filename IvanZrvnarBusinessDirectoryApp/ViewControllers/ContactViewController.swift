@@ -20,7 +20,7 @@ class ContactViewController: UIViewController {
     var contactList = [BusinessCD]()
     
     func fetchBusiness(){
-        let fetchRequest: NSFetchRequest<BusinessCD> = BusinessCD.fetchRequest()
+        let fetchRequest = BusinessCD.fetchRequest()
         
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "id", ascending: true)]
         
@@ -34,6 +34,8 @@ class ContactViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.delegate = self
 
         // Do any additional setup after loading the view.
     }
@@ -47,38 +49,7 @@ class ContactViewController: UIViewController {
         print(docDirect
         )
     }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return contactList.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath)
-        
-        let listedBusiness = contactList[indexPath.row]
-        
-        cell.textLabel?.text = listedBusiness.businessName
-        cell.detailTextLabel?.text = listedBusiness.phoneNumber
-        
 
-    
-    
-    return cell
-    }
-    
-    
-
-    
-    
-
-    
-    
 
     /*
     // MARK: - Navigation
@@ -91,5 +62,31 @@ class ContactViewController: UIViewController {
     */
 
 }
-//MARK: TableView Data Source
+//MARK: - TableView Data Source
+
+extension ContactViewController: UITableViewDelegate{
+    func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return contactList.count
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath)
+        
+        let listedBusiness = contactList[indexPath.row]
+        
+        cell.textLabel?.text = listedBusiness.businessName
+        cell.detailTextLabel?.text = listedBusiness.phoneNumber
+    }
+    
+
+    }
+
+    
+
 
