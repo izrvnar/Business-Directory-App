@@ -11,6 +11,7 @@
         <!--Save Car Contacts-->
         <scene sceneID="vSW-Zb-OrP">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8cf-29-Hwy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="dYp-lt-mn1" customClass="ContactViewController" customModule="IvanZrvnarBusinessDirectoryApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BFF-z7-gAd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -64,8 +65,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Save Car Contacts" id="HBl-3D-mLK"/>
+                    <connections>
+                        <outlet property="tableView" destination="tly-z2-1ef" id="NdY-6G-7Rd"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8cf-29-Hwy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1634.7826086956522" y="320.75892857142856"/>
         </scene>
@@ -240,6 +243,9 @@
                                         <rect key="frame" x="139" y="487" width="136.5" height="238"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Save To Contacts"/>
+                                        <connections>
+                                            <action selector="saveContact:" destination="9We-QM-y5F" eventType="touchUpInside" id="LQq-3h-R9D"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>

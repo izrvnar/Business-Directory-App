@@ -12,7 +12,21 @@ class DetailViewController: UIViewController, MKMapViewDelegate {
     
     //MARK: - Properties
     var business: Business?
+    var coreDataStack: CoreDataStack!
     @IBOutlet var mapView: MKMapView!
+    @IBAction func saveContact(_ sender: Any) {
+        let savedBusiness = BusinessCD(context: coreDataStack.managedContext)
+        savedBusiness.businessName = business?.businessName
+        savedBusiness.salesManager = business?.salesManager
+        savedBusiness.phoneNumber = business?.phoneNumber
+        savedBusiness.id = Int16(Int(business!.id))
+        coreDataStack.saveContext()
+        
+        // print test
+        print(savedBusiness)
+    }
+    
+    
     
     
     

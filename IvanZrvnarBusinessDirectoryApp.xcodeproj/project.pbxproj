@@ -20,6 +20,8 @@
 		9079097E2847F1D900C94546 /* Vehicles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9079097D2847F1D900C94546 /* Vehicles.swift */; };
 		90790980284818B600C94546 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9079097F284818B600C94546 /* ContactViewController.swift */; };
 		907909822848195000C94546 /* ContactDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907909812848195000C94546 /* ContactDetailViewController.swift */; };
+		9079098D28492E5500C94546 /* BusinessCD.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9079098B28492E5500C94546 /* BusinessCD.xcdatamodeld */; };
+		9079098F2849316300C94546 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9079098E2849316300C94546 /* CoreDataStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		9079097D2847F1D900C94546 /* Vehicles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicles.swift; sourceTree = "<group>"; };
 		9079097F284818B600C94546 /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		907909812848195000C94546 /* ContactDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailViewController.swift; sourceTree = "<group>"; };
+		9079098C28492E5500C94546 /* BusinessCD.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BusinessCD.xcdatamodel; sourceTree = "<group>"; };
+		9079098E2849316300C94546 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +74,8 @@
 		907909602846CA9B00C94546 /* IvanZrvnarBusinessDirectoryApp */ = {
 			isa = PBXGroup;
 			children = (
+				9079098B28492E5500C94546 /* BusinessCD.xcdatamodeld */,
+				9079098E2849316300C94546 /* CoreDataStack.swift */,
 				9079098728481B4C00C94546 /* Tableview Cells */,
 				9079098628481B3700C94546 /* Storyboards */,
 				9079098528481B1800C94546 /* Delegates */,
@@ -202,11 +208,13 @@
 				907909782846E17A00C94546 /* BusinessTableViewCell.swift in Sources */,
 				9079097C2847EFF700C94546 /* CustomPin.swift in Sources */,
 				907909662846CA9B00C94546 /* ViewController.swift in Sources */,
+				9079098F2849316300C94546 /* CoreDataStack.swift in Sources */,
 				907909762846DF1600C94546 /* Business.swift in Sources */,
 				9079097E2847F1D900C94546 /* Vehicles.swift in Sources */,
 				90790980284818B600C94546 /* ContactViewController.swift in Sources */,
 				907909822848195000C94546 /* ContactDetailViewController.swift in Sources */,
 				9079097A2846F9E900C94546 /* DetailViewController.swift in Sources */,
+				9079098D28492E5500C94546 /* BusinessCD.xcdatamodeld in Sources */,
 				907909622846CA9B00C94546 /* AppDelegate.swift in Sources */,
 				907909642846CA9B00C94546 /* SceneDelegate.swift in Sources */,
 			);
@@ -424,6 +432,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9079098B28492E5500C94546 /* BusinessCD.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9079098C28492E5500C94546 /* BusinessCD.xcdatamodel */,
+			);
+			currentVersion = 9079098C28492E5500C94546 /* BusinessCD.xcdatamodel */;
+			path = BusinessCD.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 907909562846CA9B00C94546 /* Project object */;
 }

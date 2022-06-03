@@ -8,6 +8,8 @@
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+    
+    var coreDataStack = CoreDataStack(modelName: "BusinessCD")
 
     var window: UIWindow?
 
@@ -17,6 +19,22 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+        
+        
+        // passing the core data stack to the other VC's 
+        guard let rootVC = window?.rootViewController as? UITabBarController,
+              let firstTabNav = rootVC.viewControllers?[0] as? UINavigationController,
+              let secondTabNav = rootVC.viewControllers?[1] as? UINavigationController,
+              let mainVC = firstTabNav.viewControllers[0] as? ViewController,
+              let secondVC = secondTabNav.viewControllers[0] as? ContactViewController else {return}
+        mainVC.coreDataStack = coreDataStack
+        secondVC.coreDataStack = coreDataStack
+        
+        
+        
+        
+        
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

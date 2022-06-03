@@ -8,6 +8,8 @@
 import UIKit
 
 class ViewController: UIViewController {
+    // reference to the core data stack
+    var coreDataStack: CoreDataStack!
     
     var businesses = [Business]()
     //MARK: - Outlets
@@ -86,6 +88,7 @@ class ViewController: UIViewController {
         
         let businessToPass = tableDataSource.itemIdentifier(for: selectedIndex)
         destinationVC.business = businessToPass
+        destinationVC.coreDataStack = coreDataStack
         
         
         
