@@ -8,12 +8,33 @@
 import UIKit
 
 class ContactDetailViewController: UIViewController {
+    //MARK: - Properties
+    var business: BusinessCD!
+    var coreDataStack: CoreDataStack!
 
+    
+    
+    //MARK: - Outlets
+    @IBOutlet var businessNameLabel: UILabel!
+    @IBOutlet var businessPhoneLabel: UILabel!
+    @IBOutlet var tableView: UITableView!
+    
+    
+
+    //MARK: View did load
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let business = business{
+            businessNameLabel.text = business.businessName
+            businessPhoneLabel.text = business.phoneNumber
+            
+        } else{
+            print("error loading business ")
+        }
+        
 
-        // Do any additional setup after loading the view.
-    }
+
+    }//: View did load
     
 
     /*
@@ -25,5 +46,7 @@ class ContactDetailViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+
 
 }

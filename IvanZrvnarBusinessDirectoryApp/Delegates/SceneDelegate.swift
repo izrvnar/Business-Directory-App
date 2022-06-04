@@ -10,6 +10,7 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var coreDataStack = CoreDataStack(modelName: "BusinessCD")
+    var savedContactList = [Business]()
 
     var window: UIWindow?
 
@@ -28,7 +29,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
               let mainVC = firstTabNav.viewControllers[0] as? ViewController,
               let secondVC = secondTabNav.viewControllers[0] as? ContactViewController else {return}
         mainVC.coreDataStack = coreDataStack
+        mainVC.businesses = savedContactList
         secondVC.coreDataStack = coreDataStack
+//        secondVC.contactList = savedContactList
         
         
         

@@ -18,6 +18,35 @@ class ContactViewController: UIViewController {
     //MARK: - Properties
     var coreDataStack: CoreDataStack!
     var contactList = [BusinessCD]()
+
+    
+
+    
+    //MARK: - Diffable Data Source
+    private lazy var tableDataSource = UITableViewDiffableDataSource<Section, BusinessCD>(tableView: tableView){
+        tableView, indexPath, business in
+        let cell = tableView.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath)
+        let listedBusiness = self.contactList[indexPath.row]
+
+        cell.textLabel?.text = listedBusiness.businessName
+        cell.detailTextLabel?.text = listedBusiness.phoneNumber
+        
+        
+        return cell
+    }
+    
+    func createDataSnapShot(){
+        var snapshot = NSDiffableDataSourceSnapshot<Section, BusinessCD>()
+        snapshot.appendSections([.main])
+        snapshot.appendItems(contactList, toSection: .main)
+        tableDataSource.apply(snapshot)
+    }
+
+    
+
+
+    
+    
     
     func fetchBusiness(){
         let fetchRequest = BusinessCD.fetchRequest()
@@ -30,7 +59,13 @@ class ContactViewController: UIViewController {
             print("There was an error fetching the taskLists: \(error.localizedDescription)")
 
         }
+        DispatchQueue.main.async {
+            self.createDataSnapShot()
+        }
+        
     }
+    
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,41 +86,51 @@ class ContactViewController: UIViewController {
     }
 
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        guard let selectedIndex = tableView.indexPathForSelectedRow else {return}
+        let destinationVC = segue.destination as! ContactDetailViewController
+        let businessToPass = tableDataSource.itemIdentifier(for: selectedIndex)
+        destinationVC.business = businessToPass
+        destinationVC.coreDataStack = coreDataStack
+
+
+       
+
+        
+
     }
-    */
+    
 
 }
 //MARK: - TableView Data Source
 
 extension ContactViewController: UITableViewDelegate{
-    func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteItem = UIContextualAction(style: .destructive, title: "Remove"){(_,_, completionHandler) in
+            self.contactList.remove(at: indexPath.row)
+
+            completionHandler(true)
+            self.coreDataStack.saveContext()
+
+        }
+        deleteItem.image = UIImage(systemName: "scissors")
+        deleteItem.backgroundColor = UIColor(named: "red")
+
+        let config = UISwipeActionsConfiguration(actions: [deleteItem])
+        return config
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return contactList.count
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath)
-        
-        let listedBusiness = contactList[indexPath.row]
-        
-        cell.textLabel?.text = listedBusiness.businessName
-        cell.detailTextLabel?.text = listedBusiness.phoneNumber
-    }
+   
     
 
-    }
+}
 
     
 
