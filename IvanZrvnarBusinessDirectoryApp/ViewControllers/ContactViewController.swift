@@ -96,6 +96,7 @@ class ContactViewController: UIViewController {
         super.viewDidLoad()
         
         tableView.delegate = self
+    
 
         // Do any additional setup after loading the view.
     }
@@ -126,25 +127,27 @@ class ContactViewController: UIViewController {
         destinationVC.business = businessToPass
         destinationVC.coreDataStack = coreDataStack
 
-
-       
-
-        
-
     }
     
 
 }
-//MARK: - TableView Data Source
+//MARK: - Extensions
 
 extension ContactViewController: UITableViewDelegate{
     
+    // creating the ability to drag and delete a contact
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let deleteItem = UIContextualAction(style: .destructive, title: "Remove"){(_,_, completionHandler) in
-            self.contactList.remove(at: indexPath.row)
-
+        let deleteItem = UIContextualAction(style: .destructive, title: "Remove"){ [self](_,_, completionHandler) in
+            let selected = contactList[indexPath.row]
+            coreDataStack.managedContext.delete(selected)
+            coreDataStack.saveContext()
+            
+            contactList.remove(at: indexPath.row)
+            createDataSnapShot()
+        
+       
             completionHandler(true)
-            self.coreDataStack.saveContext()
+         
 
         }
         deleteItem.image = UIImage(systemName: "scissors")
@@ -153,10 +156,7 @@ extension ContactViewController: UITableViewDelegate{
         let config = UISwipeActionsConfiguration(actions: [deleteItem])
         return config
     }
-
-
     
-
 }
 
     

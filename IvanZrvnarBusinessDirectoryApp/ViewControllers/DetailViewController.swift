@@ -81,6 +81,8 @@ class DetailViewController: UIViewController, MKMapViewDelegate {
             mapView.setRegion(region, animated: true)
             let mapAnnotationView = CustomPin(coordinate: (CLLocationCoordinate2D(latitude: business.latitude, longitude: business.longitude)), title:"\(business.vehicles.count) Cars")
             mapView.addAnnotation(mapAnnotationView)
+            mapView.isRotateEnabled = false
+            mapView.isScrollEnabled = false
             
 
         }

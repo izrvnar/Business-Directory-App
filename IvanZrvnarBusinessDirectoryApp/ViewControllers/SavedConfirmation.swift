@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+// creating the animation for when the user saves a business
 class SavedConfirmation: UIView{
     override func draw(_ rect: CGRect) {
         
@@ -17,7 +18,7 @@ class SavedConfirmation: UIView{
         let viewRect = CGRect(x: round((bounds.size.width - width) / 2), y: round((bounds.size.height - height) / 2), width: width, height: height)
         
         let insideRect =  UIBezierPath(roundedRect: viewRect, cornerRadius: 15)
-        UIColor(red: 0, green: 0, blue: 0, alpha: 0.9).setFill()
+        UIColor(red: 0, green: 0, blue: 255, alpha: 0.9).setFill()
         insideRect.fill()
         
         guard let image = UIImage(systemName: "car.circle.fill")?.withTintColor(.white) else { return }

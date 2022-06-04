@@ -27,7 +27,7 @@ class ContactDetailViewController: UIViewController, UNUserNotificationCenterDel
         content.body = "Ask \(business.salesManager ?? "Jim") about the cars they have in stock"
         content.sound = .default
         
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1800, repeats: false)
         let request = UNNotificationRequest(identifier: "notification.timer.\(UUID().uuidString)", content: content, trigger: trigger)
        
         UNUserNotificationCenter.current().add(request, withCompletionHandler: {

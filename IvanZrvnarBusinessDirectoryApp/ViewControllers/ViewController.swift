@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     //MARK: - Outlets
     @IBOutlet var tableView: UITableView!
     
+    //MARK: - Data Source
     private lazy var tableDataSource = UITableViewDiffableDataSource<Section, Business>(tableView: tableView){
         tableView, indexPath, business in
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! BusinessTableViewCell
@@ -47,6 +48,7 @@ class ViewController: UIViewController {
         let urlString = "https://dtakaki.scweb.ca/MADTutorial/test1Download.json"
         guard let url = URL(string: urlString) else {return}
         
+        // creating a snapshot from parsed JSON
         let dataTask = URLSession.shared.dataTask(with: url){
             data, response, error in
             
@@ -78,6 +80,7 @@ class ViewController: UIViewController {
         }
     
     //MARK: - Prepare for segue
+    // passing info to next VC
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let selectedIndex = tableView.indexPathForSelectedRow else {return}
         

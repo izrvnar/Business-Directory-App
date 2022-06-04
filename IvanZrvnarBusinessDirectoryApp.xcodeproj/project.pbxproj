@@ -57,6 +57,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		90736E5E284C118B00AFFE89 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				9079098B28492E5500C94546 /* BusinessCD.xcdatamodeld */,
+				9079098E2849316300C94546 /* CoreDataStack.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		907909552846CA9B00C94546 = {
 			isa = PBXGroup;
 			children = (
@@ -76,8 +85,7 @@
 		907909602846CA9B00C94546 /* IvanZrvnarBusinessDirectoryApp */ = {
 			isa = PBXGroup;
 			children = (
-				9079098B28492E5500C94546 /* BusinessCD.xcdatamodeld */,
-				9079098E2849316300C94546 /* CoreDataStack.swift */,
+				90736E5E284C118B00AFFE89 /* CoreData */,
 				9079098728481B4C00C94546 /* Tableview Cells */,
 				9079098628481B3700C94546 /* Storyboards */,
 				9079098528481B1800C94546 /* Delegates */,
