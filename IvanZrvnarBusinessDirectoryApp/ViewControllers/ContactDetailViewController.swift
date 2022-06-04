@@ -18,10 +18,26 @@ class ContactDetailViewController: UIViewController {
     @IBOutlet var businessNameLabel: UILabel!
     @IBOutlet var businessPhoneLabel: UILabel!
     @IBOutlet var tableView: UITableView!
+    @IBAction func setNotification(_ sender: Any) {
+        let content = UNMutableNotificationContent()
+        content.title = "Reminder to call \(business.businessName ?? "business")"
+        content.body = "Ask \(business.salesManager ?? "Jim") about the cars they have in stock"
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        let request = UNNotificationRequest(identifier: "notification.timer.\(UUID().uuidString)", content: content, trigger: trigger)
+        
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: {
+            error in
+            
+            if let error = error {
+                print("Error adding a timer notification - \(error.localizedDescription)")
+            }
+        })
+    }
     
     
 
-    //MARK: View did load
+    //MARK: - View did load
     override func viewDidLoad() {
         super.viewDidLoad()
         if let business = business{
@@ -31,6 +47,20 @@ class ContactDetailViewController: UIViewController {
         } else{
             print("error loading business ")
         }
+        
+        // requesting premisson for notifications
+        let center = UNUserNotificationCenter.current()
+        
+        center.requestAuthorization(options: [.alert, .badge,.sound], completionHandler: {
+            granted, error in
+            
+            if granted {
+                print("Access has been granted")
+            } else {
+                print("Access has not been granted")
+            }
+        })
+
         
 
 

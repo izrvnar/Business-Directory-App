@@ -135,7 +135,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="zRM-Pu-pHG">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="bell.circle" catalog="system" id="1ef-Jp-LHj"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="bell.circle" catalog="system" id="1ef-Jp-LHj">
+                            <connections>
+                                <action selector="setNotification:" destination="dHj-dh-cn5" id="Yg4-04-EUi"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="businessNameLabel" destination="0bY-Ka-hmM" id="d2R-Eq-JCE"/>

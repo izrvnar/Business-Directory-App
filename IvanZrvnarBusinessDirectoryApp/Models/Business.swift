@@ -30,20 +30,24 @@ class Business: Codable, Hashable{
     var phoneNumber: String
     var latitude: Double
     var longitude : Double
+    var companyLogo: String
     var vehicles: [Vehicles]
     
     
-    init(id: Int, businessName: String, salesManager: String, phoneNumber: String, latitude: Double, longitude: Double, vehicles: Vehicles){
+    init(id: Int, businessName: String, salesManager: String, phoneNumber: String, latitude: Double, longitude: Double, companyLogo: String, vehicles: Vehicles){
         self.id = id
         self.businessName = businessName
         self.salesManager = salesManager
         self.phoneNumber = phoneNumber
         self.latitude = latitude
         self.longitude = longitude
+        self.companyLogo = companyLogo
         self.vehicles = [vehicles]
         
         
     }
+    
+
     
     
     

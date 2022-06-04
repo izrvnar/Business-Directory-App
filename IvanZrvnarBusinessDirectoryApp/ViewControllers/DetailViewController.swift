@@ -14,17 +14,21 @@ class DetailViewController: UIViewController, MKMapViewDelegate {
     var business: Business?
     var coreDataStack: CoreDataStack!
     @IBOutlet var mapView: MKMapView!
+    
+    // saving the business to the core data stack
     @IBAction func saveContact(_ sender: Any) {
         let savedBusiness = BusinessCD(context: coreDataStack.managedContext)
         savedBusiness.businessName = business?.businessName
         savedBusiness.salesManager = business?.salesManager
         savedBusiness.phoneNumber = business?.phoneNumber
         savedBusiness.id = Int16(Int(business!.id))
+        savedBusiness.companyLogo = business?.companyLogo
         coreDataStack.saveContext()
         
         // print test
         print(savedBusiness)
         
+        // adding the alert that the business has been saved
         let savedConfirmation = SavedConfirmation()
         savedConfirmation.frame = view.bounds
         savedConfirmation.isOpaque = false
@@ -67,6 +71,7 @@ class DetailViewController: UIViewController, MKMapViewDelegate {
             }
             
             
+            // setting the map location to the business 
             
             let buisnessLocation = CLLocation(latitude: business.latitude, longitude: business.longitude)
             let regionRadius : CLLocationDistance = 1_000

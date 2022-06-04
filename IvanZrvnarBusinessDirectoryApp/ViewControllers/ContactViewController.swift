@@ -18,6 +18,7 @@ class ContactViewController: UIViewController {
     //MARK: - Properties
     var coreDataStack: CoreDataStack!
     var contactList = [BusinessCD]()
+    var business = BusinessCD()
 
     
 
@@ -30,6 +31,12 @@ class ContactViewController: UIViewController {
 
         cell.textLabel?.text = listedBusiness.businessName
         cell.detailTextLabel?.text = listedBusiness.phoneNumber
+        
+        if let companylogo = business.companyLogo{
+            self.fetchImage(for: companylogo, in: cell)
+        } else {
+            cell.imageView?.image = UIImage(systemName: "car.circle.fill")
+        }
         
         
         return cell
@@ -65,6 +72,24 @@ class ContactViewController: UIViewController {
         
     }
     
+    func fetchImage(for path: String, in cell: UITableViewCell){
+        let businessPath = path
+        
+        guard let imageUrl = URL(string: businessPath) else {
+            return
+        }
+        
+        let imageFetchTask = URLSession.shared.downloadTask(with: imageUrl){
+            url, response, error in
+            if error == nil, let url = url, let data = try? Data(contentsOf: url), let image = UIImage(data: data){
+                DispatchQueue.main.async {
+                    cell.imageView?.image = image
+                }
+            }
+        }
+        imageFetchTask.resume()
+    }
+    
 
 
     override func viewDidLoad() {
@@ -76,6 +101,8 @@ class ContactViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+       
         fetchBusiness()
         tableView.reloadData()
        
@@ -126,8 +153,8 @@ extension ContactViewController: UITableViewDelegate{
         let config = UISwipeActionsConfiguration(actions: [deleteItem])
         return config
     }
-    
-   
+
+
     
 
 }
